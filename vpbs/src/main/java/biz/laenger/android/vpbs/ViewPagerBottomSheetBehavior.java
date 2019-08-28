@@ -431,6 +431,8 @@ public class ViewPagerBottomSheetBehavior<V extends View> extends CoordinatorLay
     }
 
     void invalidateScrollingChild() {
+        if (mViewRef==null)
+            return;
         final View scrollingChild = findScrollingChild(mViewRef.get());
         mNestedScrollingChildRef = new WeakReference<>(scrollingChild);
     }
